@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+purch_behavior<- Excel_Qualitrics_Edited_NEW$purchasing_behavior
+
+Exposure_influence<- Excel_Qualitrics_Edited_NEW$impact_influencer_marketing...2
+
+Exposure_multi_channel<- Excel_Qualitrics_Edited_NEW$impact_influencer_marketing...3
+
+Demography<- Excel_Qualitrics_Edited_NEW$impact_influencer_marketing...4
+
+groupwork<- Excel_Qualitrics_Edited_NEW
+
+
+model1 <- logistic_regression<-glm(purch_behavior~ Exposure_influence + Exposure_multi_channel + Demography, groupwork,
+family=binomial)
+summary(logistic_regression)
+```
+
+
+```{r}
+
+purch_behavior <- groupwork$purchasing_behavior
+
+Exposure_influence<- groupwork$impact_influencer_marketing...2
+
+Exposure_multi_channel<- groupwork$impact_influencer_marketing...3
+
+Demography<- groupwork$impact_influencer_marketing...4
+
+hist(purch_behavior)
+hist(Exposure_influence)
+hist(Exposure_multi_channel)
+hist(Demography)
+
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+
+hist
+
+```
+
